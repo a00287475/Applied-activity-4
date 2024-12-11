@@ -7,6 +7,9 @@ Himani Himani - A00288620 [ Navigation ]
 ### WEBAPP choosen for automated testing is Netflix.
 Netflix is a subscription based streaming platform where users an watch TV shows and Movies. THey provide a web app and desktop appilication for user conveninence. Netflix use Java and Spring Boot for backend services, Python for data science, React. js and Node. js for frontend development, and AWS for cloud infrastructure.
 
+###PREREQUISITIES
+have a netflix id and password and also install related dependencies.
+
 ### Test Cases for Netflix Automation Code
 ** Functional Test Cases
 
