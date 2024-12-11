@@ -23,6 +23,13 @@ TC-FUNC-02	Test login functionality with invalid credentials	Chrome browser is i
 TC-FUNC-03	Test profile selection functionality after login	User is logged in, and profile selection page is visible.	
     1. Locate the first profile icon.
     2. Click on the profile icon.	User is successfully navigated to the main Netflix dashboard corresponding to the selected profile.
+TC-FUNC-05	Test navigation to Movies page after profile selection	User is logged in and has selected a profile. Movies page link is available.	
+  1. Locate the Movies page link.
+  2. Scroll to the link.
+  3. Click the link.
+  4. Wait for navigation to complete.
+  5. Check the URL.	User is successfully navigated to the Movies page.
+
 
 ### Usability and Accessibility Test Cases
 Test Case ID	Description	Preconditions	Test Steps	Expected Result
@@ -34,3 +41,7 @@ TC-USE-02	Test accessibility of profile icons for mouse interaction	User is logg
 TC-USE-03	Test system behavior when no credentials are entered	Chrome browser is installed.	1. Launch the program.
 2. Leave email and password fields empty.
 3. Click "Sign In".	System displays a message prompting the user to enter both email and password before proceeding.
+TC-USE-04	Verify Movies page navigation is visually responsive	User is logged in and on the main Netflix dashboard.	1. Scroll to the Movies page link.
+2. Verify if the link is highlighted on hover.
+3. Click the link.
+4. Check page responsiveness during navigation.	Movies page navigation is visually smooth, and the page adjusts appropriately to the user’s interaction.
