@@ -70,8 +70,33 @@ class Program
                 }
 
                 return;                                                 // Login test ends
+
+               
+
             }
-          
+
+            // Profile Selection test begins
+            try
+
+            {
+                IWebElement firstProfile = driver.FindElement(By.XPath("//ul[@class='choose-profile']/li[1]//a"));
+                ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].click();", firstProfile);
+                Console.WriteLine("\n\nProfile selection successful.\n\n");
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine("\n\nProfile selection failed: Cannot proceed with the next test\n\n");
+                return;
+            }
+
+            // Profile Selection test ends
+
+            // Throw  final exception 
+
+        catch (Exception ex)
+        {
+             Console.WriteLine($"\n\nTest encountered an error: {ex.Message}\n\n");
+        }
         }
         finally
         {
