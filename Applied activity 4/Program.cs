@@ -13,7 +13,7 @@ class Program
 
     static void Main(string[] args)
     {
-        
+
         ChromeOptions options = new ChromeOptions();
         options.AddArguments("--ignore-certificate-errors");       // Used to avoid any chrome certificate errors
 
@@ -71,7 +71,7 @@ class Program
 
                 return;                                                 // Login test ends
 
-               
+
 
             }
 
@@ -91,13 +91,41 @@ class Program
 
             // Profile Selection test ends
 
-            // Throw  final exception 
+
+            // Navigation test begins
+            System.Threading.Thread.Sleep(6000); // Waiting
+            try
+            {
+                IWebElement moviesLink = driver.FindElement(By.XPath("//a[contains(@href, '/browse/genre/34399')]"));
+                ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", moviesLink);
+                System.Threading.Thread.Sleep(600); // waiting
+                ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].click();", moviesLink);
+
+                System.Threading.Thread.Sleep(6000); // waiting
+
+                if (driver.Url.Contains("/browse/genre/34399"))
+                {
+                    Console.WriteLine("\n\nNavigation Test to Movies Page Successful.\n\n");
+                }
+                else
+                {
+                    Console.WriteLine("\n\nNavigation Test to Movies Page Failed.\n\n");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"\n\nFailed to navigate to the Movies page: {ex.Message}\n\n");
+            }
+        }
+        // Navigation test ends
+    
+        // Throw  final exception 
 
         catch (Exception ex)
         {
              Console.WriteLine($"\n\nTest encountered an error: {ex.Message}\n\n");
         }
-        }
+        
         finally
         {
             driver.Quit();
